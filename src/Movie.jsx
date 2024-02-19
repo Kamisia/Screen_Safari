@@ -1,6 +1,6 @@
 const Movie = ({ posterPath }) => {
   return (
-    <div className="slick-container">
+    <div className="single-movie">
       <img src={`https://image.tmdb.org/t/p/w500${posterPath}`} />
     </div>
   );

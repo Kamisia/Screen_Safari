@@ -9,7 +9,7 @@ const MovieList = () => {
   const { movies, settings, topRated } = useGlobalContext();
   return (
     <>
-      <div className="list">
+      <div className="movie-container">
         <h1> Popular Movie</h1>
         <Slider {...settings}>
           {movies.map((movie) => (
@@ -17,7 +17,7 @@ const MovieList = () => {
           ))}
         </Slider>
       </div>
-      <div className="list">
+      <div className="movie-container">
         <h1> Top Rented</h1>
         <Slider {...settings}>
           {topRated.map((movie) => (

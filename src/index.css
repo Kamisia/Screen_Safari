@@ -59,7 +59,7 @@ body {
 }
 
 /*SLIDER*/
-.list {
+.movie-container {
   width: 100vw;
   width: 100vw;
   padding-left: 5rem;
@@ -68,14 +68,14 @@ body {
   align-items: center;
   text-align: center;
 }
-.list h1 {
+.movie-container h1 {
   margin-bottom: 1rem;
   margin-top: 4rem;
   font-weight: 200;
   text-transform: uppercase;
   color: var(--light-color);
 }
-.slick-container {
+.single-movie {
   margin: 0 auto;
   justify-content: center;
   align-items: center;
@@ -85,10 +85,10 @@ body {
   height: 300px;
   flex-direction: column;
 }
-.slick-container:hover {
+.single-movie:hover {
   z-index: 1;
 }
-.slick-container img:hover {
+.single-movie img:hover {
   width: 175px;
   height: 275px;
   box-shadow: var(--shadow);
@@ -103,7 +103,7 @@ img {
   border: none;
   transition: var(--transition);
 }
-.list {
+.movie-container {
   margin-bottom: 0;
 }
 .slick-prev::before,
