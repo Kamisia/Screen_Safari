@@ -10,9 +10,46 @@ export const AppProvider = ({ children }) => {
   const settings = {
     dots: false,
     infinite: true,
-    speed: 500,
+    speed: 800,
     slidesToShow: 6,
     slidesToScroll: 6,
+    responsive: [
+      {
+        breakpoint: 1200,
+        settings: {
+          slidesToScroll: 6,
+          slidesToShow: 6,
+        },
+      },
+      {
+        breakpoint: 1100,
+        settings: {
+          slidesToScroll: 4,
+          slidesToShow: 4,
+        },
+      },
+      {
+        breakpoint: 900,
+        settings: {
+          slidesToScroll: 3,
+          slidesToShow: 3,
+        },
+      },
+      {
+        breakpoint: 660,
+        settings: {
+          slidesToScroll: 2,
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 460,
+        settings: {
+          slidesToScroll: 1,
+          slidesToShow: 1,
+        },
+      },
+    ],
   };
   useEffect(() => {
     const fetchData = async () => {
