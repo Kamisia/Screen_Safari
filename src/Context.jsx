@@ -13,37 +13,40 @@ export const AppProvider = ({ children }) => {
     speed: 800,
     slidesToShow: 6,
     slidesToScroll: 6,
+    initialSlide: 0,
+
     responsive: [
       {
-        breakpoint: 1200,
+        breakpoint: 1340,
         settings: {
           slidesToScroll: 6,
           slidesToShow: 6,
+          initialSlide: 0,
         },
       },
       {
-        breakpoint: 1100,
+        breakpoint: 1330,
         settings: {
           slidesToScroll: 4,
           slidesToShow: 4,
         },
       },
       {
-        breakpoint: 900,
+        breakpoint: 960,
         settings: {
           slidesToScroll: 3,
           slidesToShow: 3,
         },
       },
       {
-        breakpoint: 660,
+        breakpoint: 760,
         settings: {
           slidesToScroll: 2,
           slidesToShow: 2,
         },
       },
       {
-        breakpoint: 460,
+        breakpoint: 550,
         settings: {
           slidesToScroll: 1,
           slidesToShow: 1,
