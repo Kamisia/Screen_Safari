@@ -1,4 +1,4 @@
-import { SlMagnifier } from "react-icons/sl";
+//import { SlMagnifier } from "react-icons/sl";
 import { useGlobalContext } from "../Context";
 const SearchForm = () => {
   const { handleInputChange } = useGlobalContext();
