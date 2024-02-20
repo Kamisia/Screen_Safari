@@ -1,8 +1,13 @@
+import SearchForm from "./SearchForm";
+
 const Header = () => {
   return (
-    <header className="header">
-      <h1>ScreenSafari</h1>
-    </header>
+    <>
+      <header className="header">
+        <h1>ScreenSafari</h1>
+      </header>
+      <SearchForm />
+    </>
   );
 };
 

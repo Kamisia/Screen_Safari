@@ -54,27 +54,53 @@ export const AppProvider = ({ children }) => {
       },
     ],
   };
+
+  const fetchData = async () => {
+    try {
+      const apiKey = import.meta.env.VITE_TMDB_API_KEY;
+      const response = await axios.get(
+        `https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}`
+      );
+      const resp = await axios.get(
+        `https://api.themoviedb.org/3/movie/top_rated?api_key=${apiKey}`
+      );
+
+      setMovies(response.data.results);
+      setTopRated(resp.data.results);
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    }
+  };
+
+  fetchData();
+
+  const [query, setQuery] = useState("");
+  const [searchQuery, setSearchQuery] = useState([]);
+  const handleInputChange = (event) => {
+    setQuery(event.target.value);
+  };
+
   useEffect(() => {
-    const fetchData = async () => {
+    //funkcja do wyszukiwania filmów po nazwie
+    const fetchSearchData = async (event) => {
       try {
         const apiKey = import.meta.env.VITE_TMDB_API_KEY;
-        const response = await axios.get(
-          `https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}`
+        const search = await axios.get(
+          `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=${query}`
         );
-        const resp = await axios.get(
-          `https://api.themoviedb.org/3/movie/top_rated?api_key=${apiKey}`
-        );
-        setMovies(response.data.results);
-        setTopRated(resp.data.results);
+        setSearchQuery(search.data.results);
+        console.log(query);
+        console.log(searchQuery);
       } catch (error) {
         console.error("Error fetching data:", error);
       }
     };
-    fetchData();
-  }, []);
-
+    fetchSearchData();
+  }, [query]);
   return (
-    <AppContext.Provider value={{ movies, settings, topRated }}>
+    <AppContext.Provider
+      value={{ movies, settings, topRated, handleInputChange }}
+    >
       {children}
     </AppContext.Provider>
   );
