@@ -1,6 +1,6 @@
 import Slider from "react-slick";
-import Movie from "./Movie";
-import { useGlobalContext } from "../src/Context";
+import MovieCard from "./MovieCard";
+import { useGlobalContext } from "../Context";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
@@ -12,7 +12,7 @@ const MovieList = () => {
         <h1> Popular Movie</h1>
         <Slider {...settings}>
           {movies.map((movie) => (
-            <Movie key={movie.id} posterPath={movie.poster_path} />
+            <MovieCard key={movie.id} posterPath={movie.poster_path} />
           ))}
         </Slider>
       </div>
@@ -20,7 +20,7 @@ const MovieList = () => {
         <h1> Top Rented</h1>
         <Slider {...settings}>
           {topRated.map((movie) => (
-            <Movie key={movie.id} posterPath={movie.poster_path} />
+            <MovieCard key={movie.id} posterPath={movie.poster_path} />
           ))}
         </Slider>
       </div>

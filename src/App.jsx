@@ -1,6 +1,6 @@
 import Header from "./components/Header";
-
-import MovieList from "./MovieList";
+//import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import MovieList from "./components/MovieList";
 
 const App = () => {
   return (
