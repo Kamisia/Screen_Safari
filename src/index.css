@@ -138,11 +138,34 @@ img {
 }
 
 /*SEARCH FORM*/
+.search input {
+  width: 80vw;
+  padding: 0.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+  text-transform: uppercase;
+  background-color: var(--white-color);
+  border: none;
+  color: var(--dark-color);
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+  max-width: 600px;
+}
+
+/*RESULT SEARCH*/
+.results-container {
+  text-align: left;
+  margin: 1rem;
+}
+.results-container .single-movie {
+  display: inline;
+  padding: 0.5rem;
+}
+
 /*FOOTER*/
 .footer {
   width: 100vw;
-  position: absolute;
-  bottom: -100%;
+
   padding: 2rem;
   justify-content: start;
   text-align: left;

@@ -88,9 +88,7 @@ export const AppProvider = ({ children }) => {
         const search = await axios.get(
           `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=${query}`
         );
-        setSearchQuery(search.data.results);
-        console.log(query);
-        console.log(searchQuery);
+        return setSearchQuery(search.data.results);
       } catch (error) {
         console.error("Error fetching data:", error);
       }
@@ -99,7 +97,7 @@ export const AppProvider = ({ children }) => {
   }, [query]);
   return (
     <AppContext.Provider
-      value={{ movies, settings, topRated, handleInputChange }}
+      value={{ movies, settings, topRated, handleInputChange, searchQuery }}
     >
       {children}
     </AppContext.Provider>

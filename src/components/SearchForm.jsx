@@ -6,7 +6,11 @@ const SearchForm = () => {
   return (
     <div className="search">
       <form>
-        <input type="text" onChange={handleInputChange} />
+        <input
+          type="text"
+          onChange={handleInputChange}
+          placeholder="Write title..."
+        />
       </form>
     </div>
   );

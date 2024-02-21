@@ -1,9 +1,10 @@
-import { Link } from "react-router-dom";
+import SearchForm from "../components/SearchForm";
+import SearchList from "../components/SearchList";
 const Search = () => {
   return (
     <div>
-      <h1>Tu szukaj filmów</h1>
-      <Link to="/">Back Home</Link>
+      <SearchForm />
+      <SearchList />
     </div>
   );
 };
