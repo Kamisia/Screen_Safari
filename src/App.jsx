@@ -1,5 +1,5 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import { HomeLayout, Search, Landing } from "./pages";
+import { HomeLayout, Search, Landing, TopRented } from "./pages";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -10,6 +10,11 @@ const router = createBrowserRouter([
       {
         path: "/search",
         element: <Search />,
+      },
+
+      {
+        path: "/toprented",
+        element: <TopRented />,
       },
     ],
   },

@@ -1,10 +1,13 @@
 import { useState } from "react";
-const MovieCard = ({ posterPath, title, voteAverage }) => {
+
+const MovieCard = ({ posterPath, title, voteAverage, overview }) => {
   const [isShow, setIsShow] = useState(false);
   if (!posterPath)
     return (
       <div
         className="single-movie"
+        onMouseEnter={() => setIsShow(true)}
+        onMouseLeave={() => setIsShow(false)}
         style={{
           backgroundImage:
             "url(" +
@@ -14,7 +17,23 @@ const MovieCard = ({ posterPath, title, voteAverage }) => {
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
         }}
-      ></div>
+      >
+        <div
+          className="info"
+          style={{
+            visibility: isShow ? "visible" : "hidden",
+          }}
+        >
+          <div className="average">
+            <h1 className="vote">{voteAverage}/10</h1>
+          </div>
+          <div className="description">
+            <h1 className="title">{title}</h1>
+            <hr></hr>
+            <p>{overview}</p>
+          </div>
+        </div>
+      </div>
     );
   return (
     <div
@@ -35,8 +54,14 @@ const MovieCard = ({ posterPath, title, voteAverage }) => {
           visibility: isShow ? "visible" : "hidden",
         }}
       >
-        <h1 className="vote">{voteAverage}/10</h1>
-        <h1 className="title">{title}</h1>
+        <div className="average">
+          <h1 className="vote">{voteAverage}/10</h1>
+        </div>
+        <div className="description">
+          <h1 className="title">{title}</h1>
+          <hr></hr>
+          <p>{overview}</p>
+        </div>
       </div>
     </div>
   );

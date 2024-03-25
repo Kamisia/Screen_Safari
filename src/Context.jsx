@@ -80,15 +80,6 @@ export const AppProvider = ({ children }) => {
     setQuery(event.target.value);
   };
 
-  //Otwieranie i zamykanie modali z single movie
-  const [isOpen, setIsOpen] = useState(false);
-  const openModal = () => {
-    setIsOpen(true);
-  };
-  const closeModal = () => {
-    setIsOpen(false);
-  };
-
   useEffect(() => {
     //funkcja do wyszukiwania filmów po nazwie
     const fetchSearchData = async (event) => {
@@ -112,9 +103,6 @@ export const AppProvider = ({ children }) => {
         topRated,
         handleInputChange,
         searchQuery,
-        isOpen,
-        closeModal,
-        openModal,
       }}
     >
       {children}

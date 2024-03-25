@@ -32,10 +32,6 @@ body {
   font-family: "Josefin sans";
   font-weight: 400;
   color: var(--white-color);
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-
   display: flex;
   flex-direction: column;
 }
@@ -43,10 +39,11 @@ body {
 /*HEADER*/
 .header {
   width: 100vw;
-  height: 20vh;
+  height: 15vh;
+  margin-top: 0;
+  margin-bottom: auto;
   text-align: center;
-  justify-content: center;
-  align-items: center;
+
   background-color: var(--main-color);
   background-image: linear-gradient(180deg, var(--main-color) 0%, #12100e 65%);
 }
@@ -54,43 +51,48 @@ body {
 .header h1 {
   font-weight: 300;
   font-size: 4.5rem;
-  padding: 5rem;
-
+  padding-top: 1rem;
   text-transform: capitalize;
 }
 /*NAVBAR*/
 
 .nav-center {
   text-align: left;
-  margin-bottom: 2rem;
-  margin-top: 2rem;
+  margin-bottom: auto;
+  margin-top: auto;
 }
-.nav-links {
-}
+
 .nav-link {
   padding: 1rem;
   color: var(--white-color);
   text-decoration: none;
   text-transform: uppercase;
   margin-left: 1rem;
+  transition: var(--transition);
 }
 .nav-link:hover {
   color: var(--light-color);
   border-radius: 5px;
-  border: 1px solid var(--light-color);
 }
 .nav-link:active {
   color: var(--detail-color);
   border: 1px solid var(--detail-color);
 }
 /*SLIDER*/
-.movie-container {
-  width: 100vw;
+
+.movie-container,
+.search-page,
+.results-container {
+  width: 100%;
   padding-left: 5rem;
   padding-right: 5rem;
-  justify-content: center;
-  align-items: center;
+  padding-bottom: 5rem;
   text-align: center;
+  margin-top: auto;
+  margin-bottom: auto;
+
+  margin-left: 0;
+  margin-right: 0;
 }
 .movie-container h1 {
   margin-bottom: 1rem;
@@ -100,62 +102,98 @@ body {
   color: var(--light-color);
 }
 .single-movie {
-  margin: 0 auto;
-  justify-content: center;
-  align-items: center;
+  margin: auto;
   text-align: center;
-  display: inline-block;
   width: 200px;
   height: 300px;
-  flex-direction: column;
   cursor: pointer;
+
+  display: flex;
+  flex-direction: column;
 }
 .single-movie:hover {
   width: 175px;
   height: 275px;
   box-shadow: var(--shadow);
-  margin: 15px;
+  margin-top: 15px;
+  margin-bottom: auto;
 }
-.info {
+
+.single-movie .info {
   visibility: hidden;
-  border: 1px solid var(--detail-color);
+
   width: 175px;
   height: 275px;
   padding: 0;
   background-color: rgba(224, 86, 253, 0.4);
   background-image: linear-gradient(
     175deg,
-    rgba(224, 86, 253, 0.4) 0%,
-    rgba(0, 0, 0, 0.4) 74%
+    rgba(224, 86, 253, 0.2) 0%,
+    rgba(0, 0, 0, 0.8) 74%
   );
+  display: flex;
+  flex-direction: column;
 }
 
-.single-movie .title {
-  font-weight: 300;
-  font-family: "Montserrat";
-  font-size: 1rem;
-  padding: 0.5rem;
-  height: 150px;
-  text-align: start;
-  position: relative;
-  font-weight: 500;
-  bottom: 58px;
-  color: var(--light-color);
+.single-movie .info .description::-webkit-scrollbar {
+  width: 5px;
+  margin: 0;
+  padding: 0;
 }
-.single-movie .vote {
-  font-size: 1.5rem;
-  color: var(--light-color);
-  padding-top: 5px;
+.single-movie .info .description::-webkit-scrollbar-thumb {
+  background-color: var(--main-color);
+  border-radius: 10px 10px;
+}
+.single-movie .info .average {
   background-color: var(--detail-color);
   height: 35px;
   width: 86px;
   border-radius: 0px 0px 0px 10px;
-  padding-right: 6px;
-  padding-left: 6px;
-  position: relative;
-  top: -65px;
-  left: 88px;
+  margin-right: -1px;
+
+  margin-left: auto;
+}
+.single-movie .info .average .vote {
+  font-size: 1.5rem;
+  color: var(--light-color);
+
   font-weight: 300;
+  margin-top: 0;
+  margin-bottom: auto;
+}
+.single-movie .info .description {
+  height: 240px;
+  overflow: auto;
+  padding: 0;
+  margin: 0;
+  text-wrap: wrap;
+}
+.single-movie .title {
+  font-weight: 300;
+  font-family: "Montserrat";
+  font-size: 1rem;
+  margin-top: 0;
+  margin-bottom: auto;
+  padding: 0.2em;
+  padding-bottom: 0.5em;
+  padding-top: 0.5em;
+  text-align: center;
+  font-weight: 500;
+
+  color: var(--light-color);
+}
+.single-movie .info .description hr {
+  width: 80%;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 0.5em;
+  border: var(--main-color) solid 0.1px;
+}
+.single-movie .description p {
+  font-weight: 200;
+  text-align: start;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
 }
 
 .movie-container {
@@ -166,52 +204,19 @@ body {
   color: var(--detail-color);
   font-size: 1.5rem;
 }
-/*MODAL*/
-.close-modal-btn {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  font-size: 2rem;
-  background: transparent;
-  border-color: transparent;
-  cursor: pointer;
-  color: var(--red-dark);
-}
-.modal-container {
-  background: var(--white);
-  width: 90vw;
-  height: 30vh;
-  border-radius: var(--borderRadius);
-  text-align: center;
-  max-width: var(--fixed-width);
-  display: grid;
-  place-items: center;
-  position: relative;
-}
-.show-modal {
-  opacity: 1;
-  visibility: visible;
-  z-index: 10;
-  transition-property: opacity;
-  transition-duration: 2s;
-}
-.modal-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  display: grid;
-  place-items: center;
-  z-index: -1;
-  visibility: hidden;
-  opacity: 0;
-}
 
 /*SEARCH FORM*/
+.search {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  margin-left: auto;
+  margin-right: auto;
+
+  justify-content: center;
+}
 .search input {
   width: 80vw;
+  max-width: 600px;
   padding: 0.5rem;
   border-radius: 5px;
   cursor: pointer;
@@ -219,39 +224,35 @@ body {
   background-color: var(--white-color);
   border: none;
   color: var(--dark-color);
-  margin-bottom: 2rem;
-  margin-top: 2rem;
-  max-width: 600px;
 }
 
 /*RESULT SEARCH*/
 .results-container {
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  width: 100vw;
+  display: flex;
+  min-height: 43.5vh;
+  margin-right: 0;
+  margin-left: 0;
+  flex-wrap: wrap;
 }
 .results-container .single-movie {
-  display: inline-block;
-  margin: 1rem;
+  text-align: start;
+  margin: 15px;
 }
-.results-container .single-movie:hover {
-  width: 190px;
-  height: 290px;
-}
-
 /*FOOTER*/
 .footer {
   width: 100vw;
-
   padding: 2rem;
+  height: 15vh;
   justify-content: start;
   text-align: left;
   font-weight: 200;
   font-family: "Montserrat";
   background-color: var(--main-color);
   background-image: linear-gradient(360deg, var(--main-color) 0%, #12100e 40%);
+  margin-top: auto;
+  margin-bottom: 0;
 }
+
 .tmdb {
   text-decoration: none;
   color: var(--white-color);

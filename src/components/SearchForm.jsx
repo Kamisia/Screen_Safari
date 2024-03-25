@@ -9,7 +9,7 @@ const SearchForm = () => {
         <input
           type="text"
           onChange={handleInputChange}
-          placeholder="Write title..."
+          placeholder="Write title to search..."
         />
       </form>
     </div>

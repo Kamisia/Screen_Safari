@@ -1,11 +1,10 @@
-import MovieList from "../components/MovieList";
+import MoviePopular from "../components/MoviePopular.jsx";
 
 const Landing = () => {
   return (
     <div>
-      <MovieList />
+      <MoviePopular />
     </div>
   );
 };
-
 export default Landing;
