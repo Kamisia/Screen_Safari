@@ -103,6 +103,7 @@ export const AppProvider = ({ children }) => {
         topRated,
         handleInputChange,
         searchQuery,
+        query,
       }}
     >
       {children}
