@@ -10,17 +10,19 @@ const MoviePopular = () => {
     <>
       <div className="movie-container">
         <h1> Popular Movie</h1>
-        <Slider {...settings}>
-          {movies.map((movie) => (
-            <MovieCard
-              key={movie.id}
-              posterPath={movie.poster_path}
-              title={movie.title}
-              voteAverage={parseFloat(movie.vote_average).toFixed(2)}
-              overview={movie.overview}
-            />
-          ))}
-        </Slider>
+        <div className="slider">
+          <Slider {...settings}>
+            {movies.map((movie) => (
+              <MovieCard
+                key={movie.id}
+                posterPath={movie.poster_path}
+                title={movie.title}
+                voteAverage={parseFloat(movie.vote_average).toFixed(2)}
+                overview={movie.overview}
+              />
+            ))}
+          </Slider>
+        </div>
       </div>
     </>
   );
