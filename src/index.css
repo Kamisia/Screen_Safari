@@ -188,12 +188,27 @@ body {
   width: 80vw;
   max-width: 600px;
   padding: 0.5rem;
-  border-radius: 5px;
+  border-radius: 5px 0 0 5px;
   cursor: pointer;
   text-transform: uppercase;
   background-color: var(--white-color);
   border: none;
   color: var(--dark-color);
+}
+.search-btn {
+  border: none;
+  padding: 0.5rem;
+  border-radius: 0 5px 5px 0;
+  text-transform: uppercase;
+  cursor: pointer;
+  background-color: var(--darkdetail-color);
+  color: var(--white-color);
+  transition: var(--transition);
+}
+.search-btn:hover {
+  background-color: var(--white-color);
+  color: var(--darkdetail-color);
+  border: 1px solid var(--darkdetail-color);
 }
 
 /*FOOTER*/

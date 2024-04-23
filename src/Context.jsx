@@ -21,7 +21,6 @@ export const AppProvider = ({ children }) => {
         settings: {
           slidesToScroll: 5,
           slidesToShow: 5,
-          
         },
       },
 
@@ -80,22 +79,23 @@ export const AppProvider = ({ children }) => {
   const handleInputChange = (event) => {
     setQuery(event.target.value);
   };
-
-  useEffect(() => {
-    //funkcja do wyszukiwania filmów po nazwie
-    const fetchSearchData = async (event) => {
-      try {
-        const apiKey = import.meta.env.VITE_TMDB_API_KEY;
-        const search = await axios.get(
-          `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=${query}`
-        );
-        return setSearchQuery(search.data.results);
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      }
-    };
+  const fetchSearchData = async (event) => {
+    try {
+      const apiKey = import.meta.env.VITE_TMDB_API_KEY;
+      const search = await axios.get(
+        `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=${query}`
+      );
+      return setSearchQuery(search.data.results);
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    }
+  };
+  const handleSearch = () => {
     fetchSearchData();
-  }, [query]);
+  };
+  useEffect(() => {
+    handleSearch();
+  }, []);
   return (
     <AppContext.Provider
       value={{
@@ -105,6 +105,7 @@ export const AppProvider = ({ children }) => {
         handleInputChange,
         searchQuery,
         query,
+        handleSearch,
       }}
     >
       {children}
