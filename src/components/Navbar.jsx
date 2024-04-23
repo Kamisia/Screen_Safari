@@ -5,14 +5,20 @@ const Navbar = () => {
     <nav>
       <div className="nav-center">
         <div className="nav-links">
-          <NavLink to="/" className="nav-link">
+          <NavLink to={`${import.meta.env.BASE_URL}`} className="nav-link">
             Popular
           </NavLink>
 
-          <NavLink to="/toprented" className="nav-link">
+          <NavLink
+            to={`${import.meta.env.BASE_URL}toprented`}
+            className="nav-link"
+          >
             Top Rented
           </NavLink>
-          <NavLink to="/search" className="nav-link">
+          <NavLink
+            to={`${import.meta.env.BASE_URL}search`}
+            className="nav-link"
+          >
             Search
           </NavLink>
         </div>
