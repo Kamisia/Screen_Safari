@@ -17,29 +17,30 @@ export const AppProvider = ({ children }) => {
 
     responsive: [
       {
-        breakpoint: 1340,
+        breakpoint: 1500,
         settings: {
-          slidesToScroll: 6,
-          slidesToShow: 6,
-          initialSlide: 0,
+          slidesToScroll: 5,
+          slidesToShow: 5,
+          
         },
       },
+
       {
-        breakpoint: 1330,
+        breakpoint: 1450,
         settings: {
           slidesToScroll: 4,
           slidesToShow: 4,
         },
       },
       {
-        breakpoint: 960,
+        breakpoint: 1024,
         settings: {
           slidesToScroll: 3,
           slidesToShow: 3,
         },
       },
       {
-        breakpoint: 760,
+        breakpoint: 780,
         settings: {
           slidesToScroll: 2,
           slidesToShow: 2,

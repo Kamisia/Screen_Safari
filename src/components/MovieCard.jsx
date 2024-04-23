@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const MovieCard = ({ posterPath, title, voteAverage, overview }) => {
+const MovieCard = ({ posterPath, voteAverage }) => {
   const [isShow, setIsShow] = useState(false);
   return (
     <div
@@ -17,19 +17,12 @@ const MovieCard = ({ posterPath, title, voteAverage, overview }) => {
       }}
     >
       <div
-        className="info"
+        className="average"
         style={{
           visibility: isShow ? "visible" : "hidden",
         }}
       >
-        <div className="average">
-          <h1 className="vote">{voteAverage}/10</h1>
-        </div>
-        <div className="description">
-          <h1 className="title">{title}</h1>
-          <hr></hr>
-          <p>{overview}</p>
-        </div>
+        <h1 className="vote">{voteAverage}/10</h1>
       </div>
     </div>
   );

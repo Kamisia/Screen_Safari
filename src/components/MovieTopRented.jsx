@@ -16,9 +16,7 @@ const MovieTopRented = () => {
               <MovieCard
                 key={movie.id}
                 posterPath={movie.poster_path}
-                title={movie.title}
                 voteAverage={parseFloat(movie.vote_average).toFixed(2)}
-                overview={movie.overview}
               />
             ))}
           </Slider>
