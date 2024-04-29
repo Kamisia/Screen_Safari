@@ -186,7 +186,7 @@ body {
   justify-content: center;
 }
 .search input {
-  width: 80vw;
+  width: 70vw;
   max-width: 600px;
   padding: 0.5rem;
   border-radius: 5px 0 0 5px;
@@ -225,7 +225,8 @@ body {
 }
 .modal-content {
   width: 50%;
-  min-height: 400px;
+  height: 60%;
+
   margin: auto;
   max-width: 600px;
   box-shadow: var(--shadow);
@@ -265,7 +266,17 @@ body {
   padding-bottom: 0.5rem;
   margin-bottom: 1rem;
 }
-.description-content p {
+.description-content .text {
+  max-height: 50%;
+  overflow-y: auto;
+}
+.text::-webkit-scrollbar {
+  width: 5px;
+}
+.text::-webkit-scrollbar-thumb {
+  background: var(--detail-color);
+  cursor: pointer;
+  border-radius: 5px;
 }
 
 /*FOOTER*/

@@ -26,7 +26,9 @@ const ModalMovieCard = () => {
           </div>
           <h1>{title}</h1>
           <h3>{voteAverage}/10</h3>
-          <p>{description} </p>
+          <div className="text">
+            <p>{description} </p>
+          </div>
         </div>
       </div>
     </div>
