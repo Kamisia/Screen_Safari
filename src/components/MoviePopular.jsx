@@ -19,7 +19,6 @@ const MoviePopular = () => {
                 voteAverage={parseFloat(movie.vote_average).toFixed(2)}
                 title={movie.title}
                 description={movie.overview}
-                releaseDate={movie.release_date}
               />
             ))}
           </Slider>

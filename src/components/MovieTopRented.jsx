@@ -3,7 +3,7 @@ import MovieCard from "./MovieCard";
 import { useGlobalContext } from "../Context";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-
+import ModalMovieCard from "./ModalMovieCard";
 const MovieTopRented = () => {
   const { settings, topRated } = useGlobalContext();
   return (
@@ -17,11 +17,14 @@ const MovieTopRented = () => {
                 key={movie.id}
                 posterPath={movie.poster_path}
                 voteAverage={parseFloat(movie.vote_average).toFixed(2)}
+                title={movie.title}
+                description={movie.overview}
               />
             ))}
           </Slider>
         </div>
       </div>
+      <ModalMovieCard />
     </>
   );
 };
