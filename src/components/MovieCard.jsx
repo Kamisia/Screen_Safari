@@ -1,12 +1,22 @@
 import { useState } from "react";
+import { useGlobalContext } from "../Context";
 
-const MovieCard = ({ posterPath, voteAverage }) => {
+const MovieCard = ({
+  posterPath,
+  voteAverage,
+  title,
+  description,
+  releaseDate,
+}) => {
+  const { openModal } = useGlobalContext();
+
   const [isShow, setIsShow] = useState(false);
   return (
     <div
       className="single-movie"
       onMouseEnter={() => setIsShow(true)}
       onMouseLeave={() => setIsShow(false)}
+      onClick={() => openModal()}
       style={{
         backgroundImage: posterPath
           ? `url(https://image.tmdb.org/t/p/w500${posterPath})`

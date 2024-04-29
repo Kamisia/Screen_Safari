@@ -96,6 +96,38 @@ export const AppProvider = ({ children }) => {
   useEffect(() => {
     handleSearch();
   }, []);
+
+  //obsługa modalu
+  const [isOpenModal, setIsOpenModal] = useState(false);
+  const [modalContent, setModalContent] = useState({
+    title: "",
+    description: "",
+    voteAverage: "",
+    posterPath: "",
+    releaseDate: "",
+  });
+  const openModal = () => {
+    setIsOpenModal(true);
+    setModalContent({
+      title: title,
+      description: description,
+      voteAverage: voteAverage,
+      posterPath: posterPath,
+      releaseDate: releaseDate,
+    });
+    console.log(modalContent);
+  };
+  const closeModal = () => {
+    setIsOpenModal(false);
+    setModalContent({
+      title: "",
+      description: "",
+      voteAverage: "",
+      posterPath: "",
+      releaseDate: "",
+    });
+  };
+
   return (
     <AppContext.Provider
       value={{
@@ -106,6 +138,10 @@ export const AppProvider = ({ children }) => {
         searchQuery,
         query,
         handleSearch,
+        modalContent,
+        openModal,
+        closeModal,
+        isOpenModal,
       }}
     >
       {children}

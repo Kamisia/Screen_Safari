@@ -1,18 +1,12 @@
 import { useGlobalContext } from "../Context";
 import { IoMdClose } from "react-icons/io";
 
-const ModalMovieCard = ({
-  title,
-  description,
-  posterPath,
-  voteAverage,
-  releaseDate,
-}) => {
-  const {} = useGlobalContext();
-  return (
+const ModalMovieCard = ({ title, description, posterPath, voteAverage }) => {
+  const { isOpenModal, closeModal } = useGlobalContext();
+  return isOpenModal ? (
     <div className="modal">
       <div className="modal-content">
-        <button>
+        <button onClick={closeModal}>
           {" "}
           <IoMdClose />{" "}
         </button>
@@ -30,14 +24,13 @@ const ModalMovieCard = ({
           }}
         ></div>
         <div className="description-content">
-          <h1>{title} Title</h1>
-          <h3>{voteAverage} 6.67/10</h3>
-          <p>{description} blablablablabalabalabla</p>
-          <p id="data">{releaseDate} data </p>
+          <h1>{title}</h1>
+          <h3>{voteAverage} /10</h3>
+          <p>{description} </p>
         </div>
       </div>
     </div>
-  );
+  ) : null;
 };
 
 export default ModalMovieCard;
