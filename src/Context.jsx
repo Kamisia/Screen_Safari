@@ -104,18 +104,15 @@ export const AppProvider = ({ children }) => {
     description: "",
     voteAverage: "",
     posterPath: "",
-    releaseDate: "",
   });
-  const openModal = () => {
-    setIsOpenModal(true);
+  const openModal = (posterPath, voteAverage, title, description) => {
     setModalContent({
       title: title,
       description: description,
       voteAverage: voteAverage,
       posterPath: posterPath,
-      releaseDate: releaseDate,
     });
-    console.log(modalContent);
+    setIsOpenModal(true);
   };
   const closeModal = () => {
     setIsOpenModal(false);
@@ -124,8 +121,8 @@ export const AppProvider = ({ children }) => {
       description: "",
       voteAverage: "",
       posterPath: "",
-      releaseDate: "",
     });
+    console.log(modalContent);
   };
 
   return (
