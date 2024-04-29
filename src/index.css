@@ -228,7 +228,7 @@ body {
   width: 50%;
   height: 400px;
   margin: auto;
-
+  max-width: 500px;
   box-shadow: var(--shadow);
   text-align: end;
 }
@@ -267,9 +267,6 @@ body {
 .description-content h3 {
   font-weight: 300;
   padding-bottom: 0.5rem;
-}
-.description-content #data {
-  color: var(--light-color);
 }
 
 /*FOOTER*/
