@@ -11,8 +11,8 @@ export const AppProvider = ({ children }) => {
     dots: false,
     infinite: true,
     speed: 800,
-    slidesToShow: 6,
-    slidesToScroll: 6,
+    slidesToShow: 5
+    slidesToScroll: 5,
     initialSlide: 0,
 
     responsive: [
